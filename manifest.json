@@ -1,0 +1,13 @@
+{
+    "display_name": "Lore Ledger (Dynamic Story Lore)",
+    "loading_order": 50,
+    "requires": [],
+    "optional": [],
+    "dependencies": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Lore Ledger",
+    "version": "1.0.0",
+    "minimum_client_version": "1.13.5",
+    "auto_update": false
+}

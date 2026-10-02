@@ -1,0 +1,17 @@
+.lore-ledger-settings h4 { margin: 10px 0 4px; }
+.lore-ledger-settings .ll-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; }
+.lore-ledger-settings .ll-grid label { display: flex; flex-direction: column; font-size: 0.85em; }
+.lore-ledger-settings .ll-row { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+.lore-ledger-settings .ll-trtable { width: 100%; font-size: 0.85em; margin-top: 6px; }
+.lore-ledger-settings .ll-trtable input.text_pole { width: 4.5em; }
+.ll-dash { text-align: left; }
+.ll-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.ll-tab.active { outline: 2px solid var(--SmartThemeQuoteColor, #888); }
+.ll-meta, .ll-note { font-size: 0.8em; opacity: 0.8; margin: 4px 0 8px; }
+.ll-table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+.ll-table th, .ll-table td { border-bottom: 1px solid var(--SmartThemeBorderColor, #444); padding: 3px 6px; vertical-align: top; text-align: left; }
+.ll-table pre { white-space: pre-wrap; margin: 0; max-width: 34em; font-size: 0.95em; }
+.ll-act { cursor: pointer; text-decoration: underline; margin-right: 6px; white-space: nowrap; }
+.ll-promoted td:first-child { font-weight: 600; }
+.ll-rejected, .ll-excluded { opacity: 0.5; }
+.ll-tools .menu_button { margin: 3px 4px 3px 0; }

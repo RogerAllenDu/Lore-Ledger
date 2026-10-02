@@ -1,0 +1,84 @@
+<div class="lore-ledger-settings">
+  <div class="inline-drawer">
+    <div class="inline-drawer-toggle inline-drawer-header">
+      <b>Lore Ledger (Dynamic Story Lore)</b>
+      <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+    </div>
+    <div class="inline-drawer-content">
+
+      <label class="checkbox_label"><input type="checkbox" data-ll="enabled"><span>Enable automatic lore</span></label>
+      <div class="ll-row"><span id="ll_status">idle</span>
+        <input id="ll_open" class="menu_button" type="button" value="Open dashboard">
+        <input id="ll_scan_now" class="menu_button" type="button" value="Scan now"></div>
+
+      <h4>Apply mode</h4>
+      <select class="text_pole" data-ll="applyMode">
+        <option value="auto">Fully automatic (changes are applied silently, undo from History)</option>
+        <option value="review">Review: queue proposed changes under "Pending"</option>
+      </select>
+
+      <h4>When to extract</h4>
+      <div class="ll-grid">
+        <label>Every N new messages<input class="text_pole" type="number" min="1" max="60" data-ll="extractEvery"></label>
+        <label>Skip newest N messages (swipe buffer)<input class="text_pole" type="number" min="0" max="10" data-ll="settleLag"></label>
+        <label>Max messages per call<input class="text_pole" type="number" min="2" max="40" data-ll="windowMax"></label>
+        <label>Context messages<input class="text_pole" type="number" min="0" max="10" data-ll="contextMsgs"></label>
+      </div>
+
+      <h4>Promotion thresholds</h4>
+      <div class="ll-grid">
+        <label>Minimum confidence (0-1)<input class="text_pole" type="number" step="0.05" min="0" max="1" data-ll="minConfidence"></label>
+        <label>Minimum importance (0-10)<input class="text_pole" type="number" min="0" max="10" data-ll="minImportance"></label>
+        <label>Single-appearance importance (0-10)<input class="text_pole" type="number" min="1" max="10" data-ll="instantImportance"></label>
+      </div>
+      <table class="ll-trtable"><thead><tr><th>Type</th><th>On</th><th>Min scenes</th><th>Min importance</th></tr></thead><tbody id="ll_type_rules"></tbody></table>
+
+      <h4>Protagonist name(s) (never get a card; never have thoughts/feelings recorded)</h4>
+      <input class="text_pole" data-ll="protagonist" data-list="1" placeholder="Dragon">
+
+      <h4>Conflicts &amp; edits</h4>
+      <select class="text_pole" data-ll="conflictPolicy">
+        <option value="both">Keep both, mark as [disputed]</option>
+        <option value="latest">Newer fact supersedes (history kept)</option>
+        <option value="ask">Hold the newer fact and ask me (Conflicts tab)</option>
+      </select>
+      <label class="checkbox_label"><input type="checkbox" data-ll="playerAuthoritative"><span>Explicit player statements win conflicts</span></label>
+      <select class="text_pole" data-ll="onManualEdit">
+        <option value="lock">If I edit a generated card, lock it (recommended)</option>
+        <option value="overwrite">Overwrite my edits with regenerated text</option>
+      </select>
+      <label class="checkbox_label"><input type="checkbox" data-ll="includeUncertain"><span>Include labelled rumors / claims / plans in cards</span></label>
+      <select class="text_pole" data-ll="evidenceStrictness">
+        <option value="strict">Strict: drop facts whose quote is not in the cited message</option>
+        <option value="lenient">Lenient: keep them but downgrade to "unresolved"</option>
+      </select>
+
+      <h4>Static (protected) lorebooks</h4>
+      <label class="checkbox_label"><input type="checkbox" data-ll="autoDetectStatic"><span>Auto-detect active books (global, character, chat)</span></label>
+      <input class="text_pole" data-ll="staticBooks" data-list="1" placeholder="Extra lorebook names, comma separated">
+      <select class="text_pole" data-ll="staticMatch">
+        <option value="delta">Entity already in static lore: add a small delta card with only new facts</option>
+        <option value="ignore">Entity already in static lore: ignore it</option>
+      </select>
+
+      <h4>New entry defaults</h4>
+      <div class="ll-grid">
+        <label>Position<select class="text_pole" data-ll="position"><option value="0">Before char defs</option><option value="1">After char defs</option><option value="2">Top of Author's Note</option><option value="3">Bottom of Author's Note</option><option value="4">@ Depth</option></select></label>
+        <label>Depth (for @Depth)<input class="text_pole" type="number" min="0" max="50" data-ll="depth"></label>
+        <label>Order<input class="text_pole" type="number" min="0" max="999" data-ll="order"></label>
+        <label>Max characters per card<input class="text_pole" type="number" min="200" max="3000" data-ll="maxChars"></label>
+      </div>
+
+      <h4>Model</h4>
+      <select class="text_pole" data-ll="connection">
+        <option value="current">Current Chat Completion connection (generateRaw)</option>
+        <option value="profile">A Connection Manager profile</option>
+      </select>
+      <select class="text_pole" id="ll_profile" data-ll="profileId"></select>
+      <label class="checkbox_label"><input type="checkbox" data-ll="useSchema"><span>Use structured output (JSON schema) when supported</span></label>
+      <label>Max response tokens<input class="text_pole" type="number" min="500" max="16000" data-ll="maxTokens"></label>
+      <h4>Extra world notes for the extractor (optional)</h4>
+      <textarea class="text_pole" rows="3" data-ll="extraRules" placeholder="e.g. Treat guild ranks as titles, not separate entities."></textarea>
+    </div>
+  </div>
+</div>
