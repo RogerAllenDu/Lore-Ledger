@@ -75,11 +75,10 @@ slot exists, so if the chat already uses another Chat Lorebook, add the dynamic 
 
 ## 4. Install
 
-1. Copy the folder `SillyTavern-LoreLedger` to `SillyTavern/public/scripts/extensions/third-party/`
-   (or, for one user: `data/<user>/extensions/SillyTavern-LoreLedger`). The folder name must stay exactly
-   `SillyTavern-LoreLedger` (the settings template path depends on it).
-2. Restart/refresh SillyTavern (needs ST ≥ 1.13.5). Open **Extensions** (puzzle icon) → **Lore Ledger**.
-3. Tick **Enable automatic lore**.
+1. In SillyTavern, click Extensions → Install Extension
+2. Enter this repository URL:
+   [https://github.com/Prompt-And-Circumstance/StoryMode](https://github.com/RogerAllenDu/SillyTavern-LoreLedger)
+3. Lore Ledger will appear in Extensions → Lore Ledger (Dynamic Story Lore)
 
 ## 5. Configure for Google AI Studio (Gemini) + Chat Completion
 
